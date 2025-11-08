@@ -1,3 +1,21 @@
+# How It Works (For the Learner)
+
+You are the learner building and running this MERN stack blog app. Here’s what you do:
+
+- Open the app to see a list of blog posts (these come from your backend database)
+- Click 'Add Post' to open a form
+- Fill in the title and content, then submit
+- Your new post is saved and instantly appears in the list
+
+**What’s happening:**
+- The React frontend talks to your Node/Express backend
+- The backend saves and fetches posts from MongoDB
+- Everything updates automatically when you add a post
+
+This helps you practice full-stack integration: React (frontend), Express/Node (backend), and MongoDB (database).
+
+---
+
 # MERN Stack Integration Assignment
 
 This assignment focuses on building a full-stack MERN (MongoDB, Express.js, React.js, Node.js) application that demonstrates seamless integration between front-end and back-end components.
@@ -11,30 +29,6 @@ You will build a blog application with the following features:
 4. User authentication and authorization
 5. Advanced features like image uploads and comments
 
-## Project Structure
-
-```
-mern-blog/
-├── client/                 # React front-end
-│   ├── public/             # Static files
-│   ├── src/                # React source code
-│   │   ├── components/     # Reusable components
-│   │   ├── pages/          # Page components
-│   │   ├── hooks/          # Custom React hooks
-│   │   ├── services/       # API services
-│   │   ├── context/        # React context providers
-│   │   └── App.jsx         # Main application component
-│   └── package.json        # Client dependencies
-├── server/                 # Express.js back-end
-│   ├── config/             # Configuration files
-│   ├── controllers/        # Route controllers
-│   ├── models/             # Mongoose models
-│   ├── routes/             # API routes
-│   ├── middleware/         # Custom middleware
-│   ├── utils/              # Utility functions
-│   ├── server.js           # Main server file
-│   └── package.json        # Server dependencies
-└── README.md               # Project documentation
 ```
 
 ## Getting Started
@@ -59,15 +53,6 @@ mern-blog/
 - npm or yarn
 - Git
 
-## Submission
-
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
-
-1. Complete both the client and server portions of the application
-2. Implement all required API endpoints
-3. Create the necessary React components and hooks
-4. Document your API and setup process in the README.md
-5. Include screenshots of your working application
 
 ## Resources
 
@@ -75,4 +60,4 @@ Your work will be automatically submitted when you push to your GitHub Classroom
 - [Express.js Documentation](https://expressjs.com/)
 - [React Documentation](https://react.dev/)
 - [Node.js Documentation](https://nodejs.org/en/docs/)
-- [Mongoose Documentation](https://mongoosejs.com/docs/) 
+- [Mongoose Documentation](https://mongoosejs.com/docs/)

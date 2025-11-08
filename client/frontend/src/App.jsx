@@ -2,6 +2,7 @@ import { useState } from "react";
 import PostsList from "./components/PostList";
 import NewPost from "./components/NewPost";
 
+
 function App() {
   const [showNewPost, setShowNewPost] = useState(false);
 
