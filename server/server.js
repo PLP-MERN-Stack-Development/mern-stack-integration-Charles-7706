@@ -1,16 +1,22 @@
 // server.js - Main server file for the MERN blog application
 
 // Import required modules
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const dotenv = require('dotenv');
-const path = require('path');
+// const express = require('express');
+import express from 'express';
+// const cors = require('cors');
+import cors from 'cors';
+// const dotenv = require('dotenv');
+import dotenv from 'dotenv';
+// const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+// const { connectDB } = require('./config/db');
+import { connectDB } from './config/db.js';
+
+import { Router } from 'express';
 
 // Import routes
-const postRoutes = require('./routes/posts');
-const categoryRoutes = require('./routes/categories');
-const authRoutes = require('./routes/auth');
+// const postRoutes = require('./routes/posts');
+import postRoutes from './routes/postRoutes.js';
 
 // Load environment variables
 dotenv.config();
@@ -25,7 +31,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Serve uploaded files
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 
 // Log requests in development mode
 if (process.env.NODE_ENV === 'development') {
@@ -37,8 +43,6 @@ if (process.env.NODE_ENV === 'development') {
 
 // API routes
 app.use('/api/posts', postRoutes);
-app.use('/api/categories', categoryRoutes);
-app.use('/api/auth', authRoutes);
 
 // Root route
 app.get('/', (req, res) => {
@@ -55,16 +59,14 @@ app.use((err, req, res, next) => {
 });
 
 // Connect to MongoDB and start server
-mongoose
-  .connect(process.env.MONGODB_URI)
+connectDB()
   .then(() => {
-    console.log('Connected to MongoDB');
     app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`);
+      console.log(`Server is running in ${process.env.NODE_ENV} mode on port ${PORT}`);
     });
   })
   .catch((err) => {
-    console.error('Failed to connect to MongoDB', err);
+    console.error('Failed to connect to MongoDB:', err);
     process.exit(1);
   });
 
@@ -75,4 +77,4 @@ process.on('unhandledRejection', (err) => {
   process.exit(1);
 });
 
-module.exports = app; 
+export default app;
